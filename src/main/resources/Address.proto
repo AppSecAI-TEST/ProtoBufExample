@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package tutorial;
+
+option java_package = "com.tutorial.protobuf";
+option java_outer_classname = "AddressProto";
+
+message Address {
+   string city = 1;
+   string state = 2;
+}

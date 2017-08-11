@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package tutorial;
+import "Address.proto";
+option java_package = "com.tutorial.protobuf";
+option java_outer_classname = "Employee1Proto";
+
+message Employee1 {
+   string firstname = 1;
+   string lastname = 2;
+   int32 id = 3;
+   Department dept = 4;
+   double salary = 5;
+   enum Gender {
+      MALE = 0;
+      FEMALE = 1;
+      OTHER = 2;
+   }
+   Gender gender= 6;
+   Address address = 7;
+   map<string, Address> favPlaces = 8;
+   message Phone{
+      int64 phoneNumber = 1;
+      bool whatsappEnabled = 2;
+   }
+   Phone phone = 9;
+}
+
+message Department {
+   int32 deptid = 1;
+   string deptname = 2;
+}
